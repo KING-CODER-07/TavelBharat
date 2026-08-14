@@ -1,0 +1,234 @@
+/* app/places/[placeId]/place.module.css */
+
+.heroSection {
+  position: relative;
+  height: 65vh;
+  min-height: 450px;
+  display: flex;
+  align-items: center;
+  margin-top: -5rem;
+  padding-top: 5rem;
+}
+
+.heroOverlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: -2;
+  background-color: var(--primary); /* Fallback */
+}
+
+.heroOverlayImageWrapper {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+}
+
+.heroOverlayImageWrapper img {
+  filter: brightness(0.65);
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  padding: 3rem;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  max-width: 800px;
+  transform: translateY(2rem); /* Pull it down slightly to overlap */
+}
+
+.categoryBadge {
+  display: inline-block;
+  background: var(--gradient-primary);
+  color: white;
+  padding: 0.35rem 1rem;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  box-shadow: var(--shadow-glow);
+}
+
+.heroTitle {
+  font-size: 3.5rem;
+  color: var(--text-main);
+  margin-bottom: 0.5rem;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.heroLocation {
+  font-size: 1.25rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.locationLink {
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.locationLink:hover {
+  color: var(--accent);
+}
+
+.pageContainer {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3rem;
+  padding: 5rem 1.5rem;
+}
+
+.mainSectionTitle {
+  font-size: 2.25rem;
+  color: var(--text-main);
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.descriptionText {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.paragraph {
+  margin-bottom: 1.5rem;
+}
+
+/* Sidebar */
+.sidebarCard {
+  position: sticky;
+  top: 6rem; /* Stick just below the navbar */
+  padding: 2.5rem;
+}
+
+.sidebarTitle {
+  font-size: 1.5rem;
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.infoList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.infoLabel {
+  display: block;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.25rem;
+  letter-spacing: 0.05em;
+}
+
+.infoList span {
+  font-size: 1.1rem;
+  color: var(--text-main);
+  font-weight: 500;
+}
+
+.attractionsContainer {
+  margin-top: 3rem;
+}
+
+.attractionsTitle {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.attractionsList {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.attractionItem {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  color: var(--text-main);
+  font-weight: 500;
+  border: 1px solid var(--glass-border);
+  border-left: 4px solid var(--primary-light);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.attractionItem:hover {
+  transform: translateX(5px);
+  border-left-color: var(--accent);
+}
+
+/* Masonry Gallery */
+.galleryContainer {
+  margin-top: 4rem;
+}
+
+.galleryTitle {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.galleryGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  grid-auto-rows: 250px;
+  grid-auto-flow: dense;
+}
+
+.galleryImageWrapper {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Make every 3rd item span 2 columns and rows for masonry effect */
+.galleryImageWrapper:nth-child(3n) {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.galleryImageWrapper img {
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.galleryImageWrapper:hover img {
+  transform: scale(1.1);
+}
+
+@media (max-width: 992px) {
+  .pageContainer {
+    grid-template-columns: 1fr;
+  }
+  .sidebarCard {
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 2.5rem;
+  }
+  .galleryImageWrapper:nth-child(3n) {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+}

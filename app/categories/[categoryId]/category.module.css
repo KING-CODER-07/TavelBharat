@@ -1,0 +1,95 @@
+/* app/categories/[categoryId]/category.module.css */
+
+.heroSection {
+  position: relative;
+  height: 30vh;
+  min-height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+}
+
+.heroTitle {
+  font-size: 3rem;
+  color: white;
+}
+
+.heroSubtitle {
+  font-size: 1.125rem;
+  margin-top: 0.5rem;
+  opacity: 0.9;
+}
+
+.pageContainer {
+  padding: 4rem 1.5rem;
+}
+
+.emptyState {
+  color: var(--text-muted);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.cardLink {
+  display: block;
+}
+
+.cardContainer {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.imageContainer {
+  position: relative;
+  height: 220px;
+  background-color: #e2e8f0;
+}
+
+.stateBadge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.cardContent {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.cardLocation {
+  color: var(--primary);
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+
+.cardDesc {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}

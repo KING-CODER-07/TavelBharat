@@ -1,0 +1,159 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model State {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  name        String   @unique
+  description String?
+  imageUrl    String?
+  cities      City[]
+  places      Place[]
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model City {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  name      String
+  stateId   String   @db.ObjectId
+  state     State    @relation(fields: [stateId], references: [id])
+  places    Place[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Category {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  name      String   @unique // e.g., Heritage, Nature, Religious, Adventure
+  places    Place[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Place {
+  id                String   @id @default(auto()) @map("_id") @db.ObjectId
+  name              String
+  description       String
+  bestTimeToVisit   String?
+  entryFees         String?
+  timings           String?
+  locationMapLink   String?
+  nearbyAttractions String? // Could be a JSON string array
+  imageUrls         String? // JSON string array
+  
+  stateId           String   @db.ObjectId
+  state             State    @relation(fields: [stateId], references: [id])
+  
+  cityId            String?  @db.ObjectId
+  city              City?    @relation(fields: [cityId], references: [id])
+  
+  categoryId        String   @db.ObjectId
+  category          Category @relation(fields: [categoryId], references: [id])
+
+  isOffbeat         Boolean  @default(false)
+  
+  favoritedByIds    String[] @db.ObjectId
+  favoritedBy       User[]   @relation("UserFavorites", fields: [favoritedByIds], references: [id])
+  
+  reviews           Review[]
+  bookings          Booking[]
+  itineraryItems    ItineraryItem[]
+
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+}
+
+model User {
+  id             String      @id @default(auto()) @map("_id") @db.ObjectId
+  name           String
+  email          String      @unique
+  password       String
+  role           String      @default("USER")
+  
+  favoritePlaceIds String[]  @db.ObjectId
+  favorites      Place[]     @relation("UserFavorites", fields: [favoritePlaceIds], references: [id])
+  
+  reviews        Review[]
+  itineraries    Itinerary[]
+  bookings       Booking[]
+  createdAt      DateTime    @default(now())
+  updatedAt      DateTime    @updatedAt
+}
+
+model Review {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  rating    Int
+  comment   String
+  userId    String   @db.ObjectId
+  user      User     @relation(fields: [userId], references: [id])
+  placeId   String   @db.ObjectId
+  place     Place    @relation(fields: [placeId], references: [id])
+  createdAt DateTime @default(now())
+}
+
+model Itinerary {
+  id        String         @id @default(auto()) @map("_id") @db.ObjectId
+  title     String
+  userId    String         @db.ObjectId
+  user      User           @relation(fields: [userId], references: [id])
+  days      ItineraryDay[]
+  createdAt DateTime       @default(now())
+  updatedAt DateTime       @updatedAt
+}
+
+model ItineraryDay {
+  id          String          @id @default(auto()) @map("_id") @db.ObjectId
+  dayNumber   Int
+  itineraryId String          @db.ObjectId
+  itinerary   Itinerary       @relation(fields: [itineraryId], references: [id], onDelete: Cascade)
+  items       ItineraryItem[]
+}
+
+model ItineraryItem {
+  id        String       @id @default(auto()) @map("_id") @db.ObjectId
+  time      String?
+  placeId   String       @db.ObjectId
+  place     Place        @relation(fields: [placeId], references: [id])
+  dayId     String       @db.ObjectId
+  day       ItineraryDay @relation(fields: [dayId], references: [id], onDelete: Cascade)
+}
+
+model Booking {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  type      String   // e.g., 'Hotel', 'Transport', 'Guide'
+  details   String
+  status    String   @default("Pending")
+  userId    String   @db.ObjectId
+  user      User     @relation(fields: [userId], references: [id])
+  placeId   String   @db.ObjectId
+  place     Place    @relation(fields: [placeId], references: [id])
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model SearchLog {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  query     String
+  createdAt DateTime @default(now())
+}
+
+model Inquiry {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  name        String
+  email       String
+  phone       String?
+  inquiryType String   // e.g., Corporate Booking, Leisure Vacation
+  message     String
+  status      String   @default("Pending") // e.g., Pending, Responded, Closed
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}

@@ -1,0 +1,125 @@
+/* app/search/search.module.css */
+
+.searchPage {
+  padding: 4rem 1.5rem;
+  min-height: 80vh;
+}
+
+.pageTitle {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.03em;
+}
+
+.searchForm {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 2rem;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--glass-border);
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 10;
+}
+
+/* Glowing Search Input */
+.searchInput {
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--glass-border);
+  background: rgba(24, 24, 27, 0.45);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  transition: all 0.3s;
+}
+
+.searchInput:focus {
+  border-color: var(--primary);
+  background: rgba(24, 24, 27, 0.65);
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-2px);
+}
+
+.searchResultsHeading {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: var(--text-main);
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 1rem;
+}
+
+.resultsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.resultLink {
+  display: block;
+}
+
+/* Staggered cascading animations for results */
+@keyframes slideUpFade {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.placeCard {
+  padding: 1.5rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  opacity: 0;
+  animation: slideUpFade 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Dynamically stagger the first 10 items using CSS */
+.placeCard:nth-child(1) { animation-delay: 0.05s; }
+.placeCard:nth-child(2) { animation-delay: 0.1s; }
+.placeCard:nth-child(3) { animation-delay: 0.15s; }
+.placeCard:nth-child(4) { animation-delay: 0.2s; }
+.placeCard:nth-child(5) { animation-delay: 0.25s; }
+.placeCard:nth-child(6) { animation-delay: 0.3s; }
+.placeCard:nth-child(7) { animation-delay: 0.35s; }
+.placeCard:nth-child(8) { animation-delay: 0.4s; }
+.placeCard:nth-child(9) { animation-delay: 0.45s; }
+.placeCard:nth-child(10) { animation-delay: 0.5s; }
+
+.placeCardMeta {
+  font-size: 0.75rem;
+  color: var(--primary);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.05em;
+}
+
+.placeCardTitle {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-main);
+}
+
+.placeCardDescription {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .pageTitle {
+    font-size: 2.25rem;
+  }
+}
