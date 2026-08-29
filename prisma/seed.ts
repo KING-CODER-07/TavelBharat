@@ -14,26 +14,26 @@ async function main() {
   }
 
   const statesData = [
-    { name: 'Andhra Pradesh', description: 'Known for its rich cultural heritage and ancient temples.', image: '/images/destinations/andhra-pradesh.jpg', cities: ['Visakhapatnam', 'Vijayawada', 'Tirupati'] },
-    { name: 'Arunachal Pradesh', description: 'The land of dawn-lit mountains.', image: '/images/destinations/arunachal-pradesh.jpg', cities: ['Itanagar', 'Tawang', 'Ziro'] },
-    { name: 'Assam', description: 'Famous for its tea gardens and wildlife.', image: '/images/destinations/assam.jpg', cities: ['Guwahati', 'Silchar', 'Dibrugarh'] },
-    { name: 'Bihar', description: 'The cradle of history and culture.', image: '/images/destinations/bihar.jpg', cities: ['Patna', 'Gaya', 'Bhagalpur'] },
-    { name: 'Goa', description: 'Famous for its pristine beaches and vibrant nightlife.', image: '/images/destinations/goa.jpg', cities: ['Panaji', 'Vasco da Gama', 'Margao'] },
-    { name: 'Gujarat', description: 'Home to the Asiatic lion and vast salt deserts.', image: '/images/destinations/gujarat.jpg', cities: ['Ahmedabad', 'Surat', 'Vadodara'] },
-    { name: 'Himachal Pradesh', description: 'Spectacular mountains and valleys.', image: '/images/destinations/himachal-pradesh.jpg', cities: ['Shimla', 'Manali', 'Dharamshala'] },
-    { name: 'Karnataka', description: 'A mix of modern technology and ancient ruins.', image: '/images/destinations/karnataka.jpg', cities: ['Bengaluru', 'Mysuru', 'Hubli'] },
-    { name: 'Kerala', description: 'God\'s own country.', image: '/images/destinations/kerala.jpg', cities: ['Thiruvananthapuram', 'Kochi', 'Kozhikode'] },
-    { name: 'Madhya Pradesh', description: 'The heart of India.', image: '/images/destinations/madhya-pradesh.jpg', cities: ['Indore', 'Bhopal', 'Jabalpur'] },
-    { name: 'Maharashtra', description: 'Land of diverse cultures and bustling cities.', image: '/images/destinations/maharashtra.jpg', cities: ['Mumbai', 'Pune', 'Nagpur'] },
-    { name: 'Punjab', description: 'The land of five rivers.', image: '/images/destinations/punjab.jpg', cities: ['Ludhiana', 'Amritsar', 'Jalandhar'] },
-    { name: 'Rajasthan', description: 'The land of Kings.', image: '/images/destinations/rajasthan.jpg', cities: ['Jaipur', 'Udaipur', 'Jodhpur'] },
-    { name: 'Tamil Nadu', description: 'Land of temples and traditions.', image: '/images/destinations/tamil-nadu.jpg', cities: ['Chennai', 'Coimbatore', 'Madurai'] },
-    { name: 'Uttar Pradesh', description: 'Home to the majestic Taj Mahal.', image: '/images/destinations/uttar-pradesh.jpeg', cities: ['Lucknow', 'Kanpur', 'Agra'] },
-    { name: 'Uttarakhand', description: 'Devbhumi, the land of the gods.', image: '/images/destinations/uttarakhand.jpg', cities: ['Dehradun', 'Haridwar', 'Rishikesh'] },
-    { name: 'West Bengal', description: 'The cultural capital of India.', image: '/images/destinations/west-bengal.jpg', cities: ['Kolkata', 'Darjeeling', 'Siliguri'] },
-    { name: 'Delhi', description: 'The historic and modern capital.', image: '/images/destinations/delhi.jpg', cities: ['New Delhi', 'Old Delhi'] },
-    { name: 'Ladakh', description: 'The land of high passes.', image: '/images/destinations/ladakh.jpg', cities: ['Leh', 'Kargil'] },
-    { name: 'Jammu and Kashmir', description: 'Paradise on Earth.', image: '/images/destinations/jammu-and-kashmir.jpg', cities: ['Srinagar', 'Jammu', 'Anantnag'] }
+    { name: 'Andhra Pradesh', description: 'Known for its rich cultural heritage and ancient temples.', image: 'https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=2071&auto=format&fit=crop', cities: ['Visakhapatnam', 'Vijayawada', 'Tirupati'] },
+    { name: 'Arunachal Pradesh', description: 'The land of dawn-lit mountains.', image: 'https://images.unsplash.com/photo-1514222324005-4d69359e9a44?q=80&w=2070&auto=format&fit=crop', cities: ['Itanagar', 'Tawang', 'Ziro'] },
+    { name: 'Assam', description: 'Famous for its tea gardens and wildlife.', image: 'https://images.unsplash.com/photo-1623547169420-94e82367d643?q=80&w=1974&auto=format&fit=crop', cities: ['Guwahati', 'Silchar', 'Dibrugarh'] },
+    { name: 'Bihar', description: 'The cradle of history and culture.', image: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=2069&auto=format&fit=crop', cities: ['Patna', 'Gaya', 'Bhagalpur'] },
+    { name: 'Goa', description: 'Famous for its pristine beaches and vibrant nightlife.', image: 'https://images.unsplash.com/photo-1593693397690-362cb9666fc2?q=80&w=2069&auto=format&fit=crop', cities: ['Panaji', 'Vasco da Gama', 'Margao'] },
+    { name: 'Gujarat', description: 'Home to the Asiatic lion and vast salt deserts.', image: 'https://images.unsplash.com/photo-1564507592227-0b0b5c0658e7?q=80&w=2070&auto=format&fit=crop', cities: ['Ahmedabad', 'Surat', 'Vadodara'] },
+    { name: 'Himachal Pradesh', description: 'Spectacular mountains and valleys.', image: 'https://images.unsplash.com/photo-1506461883276-594c397e41d8?q=80&w=2071&auto=format&fit=crop', cities: ['Shimla', 'Manali', 'Dharamshala'] },
+    { name: 'Karnataka', description: 'A mix of modern technology and ancient ruins.', image: 'https://images.unsplash.com/photo-1598324789736-4861f89564a0?q=80&w=1974&auto=format&fit=crop', cities: ['Bengaluru', 'Mysuru', 'Hubli'] },
+    { name: 'Kerala', description: 'God\'s own country.', image: 'https://images.unsplash.com/photo-1615655406736-b37c4fabf923?q=80&w=2070&auto=format&fit=crop', cities: ['Thiruvananthapuram', 'Kochi', 'Kozhikode'] },
+    { name: 'Madhya Pradesh', description: 'The heart of India.', image: 'https://images.unsplash.com/photo-1548013146-72479768bada?q=80&w=2076&auto=format&fit=crop', cities: ['Indore', 'Bhopal', 'Jabalpur'] },
+    { name: 'Maharashtra', description: 'Land of diverse cultures and bustling cities.', image: 'https://images.unsplash.com/photo-1596280456247-2b0ce818c4bd?q=80&w=2070&auto=format&fit=crop', cities: ['Mumbai', 'Pune', 'Nagpur'] },
+    { name: 'Punjab', description: 'The land of five rivers.', image: 'https://images.unsplash.com/photo-1621271168478-f7b57b9876e5?q=80&w=2070&auto=format&fit=crop', cities: ['Ludhiana', 'Amritsar', 'Jalandhar'] },
+    { name: 'Rajasthan', description: 'The land of Kings.', image: 'https://images.unsplash.com/photo-1590766940554-634a7ed41450?q=80&w=2069&auto=format&fit=crop', cities: ['Jaipur', 'Udaipur', 'Jodhpur'] },
+    { name: 'Tamil Nadu', description: 'Land of temples and traditions.', image: 'https://images.unsplash.com/photo-1600100397608-f010f423b971?q=80&w=1974&auto=format&fit=crop', cities: ['Chennai', 'Coimbatore', 'Madurai'] },
+    { name: 'Uttar Pradesh', description: 'Home to the majestic Taj Mahal.', image: 'https://images.unsplash.com/photo-1560086884-a15d742eb5e2?q=80&w=2070&auto=format&fit=crop', cities: ['Lucknow', 'Kanpur', 'Agra'] },
+    { name: 'Uttarakhand', description: 'Devbhumi, the land of the gods.', image: 'https://images.unsplash.com/photo-1599587425175-103bc4c40026?q=80&w=1935&auto=format&fit=crop', cities: ['Dehradun', 'Haridwar', 'Rishikesh'] },
+    { name: 'West Bengal', description: 'The cultural capital of India.', image: 'https://images.unsplash.com/photo-1622308644420-b8fc322db12a?q=80&w=2070&auto=format&fit=crop', cities: ['Kolkata', 'Darjeeling', 'Siliguri'] },
+    { name: 'Delhi', description: 'The historic and modern capital.', image: 'https://images.unsplash.com/photo-1589308078059-be1415e143b4?q=80&w=2070&auto=format&fit=crop', cities: ['New Delhi', 'Old Delhi'] },
+    { name: 'Ladakh', description: 'The land of high passes.', image: 'https://images.unsplash.com/photo-1600021612760-4927f8a9e701?q=80&w=1969&auto=format&fit=crop', cities: ['Leh', 'Kargil'] },
+    { name: 'Jammu and Kashmir', description: 'Paradise on Earth.', image: 'https://images.unsplash.com/photo-1616035251508-b7a602ffc425?q=80&w=2070&auto=format&fit=crop', cities: ['Srinagar', 'Jammu', 'Anantnag'] }
   ];
 
   const stateMap: Record<string, any> = {};
@@ -70,7 +70,7 @@ async function main() {
             stateId: state.id,
             cityId: existingCity.id,
             categoryId: categoryMap['Cultural'].id,
-            imageUrls: JSON.stringify([`/images/destinations/${cityName.toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-]+/g, '')}.jpg`]),
+            imageUrls: JSON.stringify(["https://images.unsplash.com/photo-1557088911-30cb41c7b1bc?q=80&w=2070&auto=format&fit=crop","https://images.unsplash.com/photo-1533423996375-f914b1ce6d56?q=80&w=2070&auto=format&fit=crop","https://images.unsplash.com/photo-1643881476901-52ab53fcc251?q=80&w=2070&auto=format&fit=crop","https://images.unsplash.com/photo-1524311583145-d5593bd2602a?q=80&w=2071&auto=format&fit=crop"]),
             bestTimeToVisit: 'October to March',
             isOffbeat: ['Ziro', 'Tawang', 'Silchar', 'Dibrugarh', 'Leh', 'Kargil'].includes(cityName)
           }
@@ -79,7 +79,7 @@ async function main() {
         await prisma.place.update({
           where: { id: place.id },
           data: { 
-            imageUrls: JSON.stringify([`/images/destinations/${cityName.toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-]+/g, '')}.jpg`]),
+            imageUrls: JSON.stringify(["https://images.unsplash.com/photo-1517427677506-ade074eb1432?q=80&w=1974&auto=format&fit=crop","https://images.unsplash.com/photo-1506461883276-594c397e41d8?q=80&w=2071&auto=format&fit=crop","https://images.unsplash.com/photo-1606558485292-6f29633c7f99?q=80&w=2070&auto=format&fit=crop","https://images.unsplash.com/photo-1583275095033-7281bc8836ec?q=80&w=1934&auto=format&fit=crop"]),
             isOffbeat: ['Ziro', 'Tawang', 'Silchar', 'Dibrugarh', 'Leh', 'Kargil'].includes(cityName)
           }
         });
@@ -89,8 +89,8 @@ async function main() {
 
   // Exact popular places
   const placesData = [
-    { name: 'Taj Mahal', state: 'Uttar Pradesh', city: 'Agra', category: 'Heritage', desc: 'An ivory-white marble mausoleum on the right bank of the river Yamuna.', images: ['/images/destinations/taj-mahal.jpg'] },
-    { name: 'Baga Beach', state: 'Goa', city: 'Panaji', category: 'Nature', desc: 'A popular beach and tourist destination in North Goa.', images: ['/images/destinations/baga-beach.jpg'] },
+    { name: 'Taj Mahal', state: 'Uttar Pradesh', city: 'Agra', category: 'Heritage', desc: 'An ivory-white marble mausoleum on the right bank of the river Yamuna.', images: ["https://images.unsplash.com/photo-1585675402633-86d11f62bbf0?q=80&w=2070&auto=format&fit=crop","https://images.unsplash.com/photo-1598324789736-4861f89564a0?q=80&w=1974&auto=format&fit=crop","https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=2071&auto=format&fit=crop","https://images.unsplash.com/photo-1514222324005-4d69359e9a44?q=80&w=2070&auto=format&fit=crop"] },
+    { name: 'Baga Beach', state: 'Goa', city: 'Panaji', category: 'Nature', desc: 'A popular beach and tourist destination in North Goa.', images: ["https://images.unsplash.com/photo-1623547169420-94e82367d643?q=80&w=1974&auto=format&fit=crop","https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=2069&auto=format&fit=crop","https://images.unsplash.com/photo-1593693397690-362cb9666fc2?q=80&w=2069&auto=format&fit=crop","https://images.unsplash.com/photo-1564507592227-0b0b5c0658e7?q=80&w=2070&auto=format&fit=crop"] },
   ];
 
   for (const p of placesData) {
